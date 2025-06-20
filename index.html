@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>안양천 징검다리 CCTV 뷰어</title>
+  <style>
+    body { background: #000; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    img { max-width: 100%; max-height: 100%; }
+  </style>
+</head>
+<body>
+  <div id="videoContainer"></div>
+
+<script src="https://smartcity.gm.go.kr/js/plugins/xeus/xeus.player.2.1.0.js"></script>
+<script>
+  const player = new XeusGate.Player({
+    playerId: 'videoContainer',
+    url: 'wss://smartcctv.gm.go.kr:8443/xeus-gate/stream',
+    cctvMgrNo: '509732_1_1',
+    codec: 'h264', // mjpeg or h264
+    userId: 'tester1',
+    evtType: '112',
+    timestamp: '10',
+    speed: '10',
+    size: '',
+    bitrate: 'undefined',
+    framerate: 'undefined',
+    debug: true
+  });
+</script>
+
+</body>
+</html>
